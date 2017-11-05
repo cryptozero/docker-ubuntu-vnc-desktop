@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ARG SEMUXVER="1.0.0-beta.5"
+ARG SEMUXVER="1.0.0-rc.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 
