@@ -37,7 +37,7 @@ WORKDIR /root
 ENV HOME=/home/ubuntu \
     SHELL=/bin/bash
 
-RUN curl -L https://github.com/semuxproject/semux/releases/download/v${SEMUXVER}/semux-${SEMUXVER}.tar.gz -o /semux-${SEMUXVER}.tar.gz 
-RUN mkdir -p /semux && tar -xzf /semux-${SEMUXVER}.tar.gz -C /semux --strip-components=1 && rm /semux-${SEMUXVER}.tar.gz
+RUN curl -L https://github.com/semuxproject/semux/releases/download/v${SEMUXVER}/semux-${SEMUXVER}-unix.tar.gz -o /semux-${SEMUXVER}-unix.tar.gz 
+RUN mkdir -p /semux && tar -xzf /semux-${SEMUXVER}-unix.tar.gz -C /semux --strip-components=1 && rm /semux-${SEMUXVER}-unix.tar.gz
 RUN mkdir -p /root/Desktop && ln -s /semux /root/Desktop/semux
 ENTRYPOINT ["/startup.sh"]
