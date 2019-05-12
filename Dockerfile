@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ARG SEMUXVER="1.0.0"
+ARG SEMUXVER="1.4.0"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -37,7 +37,7 @@ WORKDIR /root
 ENV HOME=/home/ubuntu \
     SHELL=/bin/bash
 
-RUN curl -L https://github.com/semuxproject/semux/releases/download/v1.0.0/semux-linux-1.0.0-4a83a2d.tar.gz -o /semux-${SEMUXVER}-unix.tar.gz
+RUN curl -L https://github.com/semuxproject/semux-core/releases/download/v1.4.0/semux-linux-1.4.0-305d104.tar.gz -o /semux-${SEMUXVER}-unix.tar.gz
 # RUN curl -L https://github.com/semuxproject/semux/releases/download/v${SEMUXVER}/semux-${SEMUXVER}-unix.tar.gz -o /semux-${SEMUXVER}-unix.tar.gz 
 RUN mkdir -p /semux && tar -xzf /semux-${SEMUXVER}-unix.tar.gz -C /semux --strip-components=1 && rm /semux-${SEMUXVER}-unix.tar.gz
 RUN mkdir -p /root/Desktop && ln -s /semux /root/Desktop/semux
